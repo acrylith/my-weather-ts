@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+.tabcontent {
+    animation: fadeEffect .5s;
+}
+
+.header {
+    margin-top: 40px;
+
+    &__btn-wrapper {
+        button {
+            width: 100%;
+            border-radius: 50px;
+            background-color: transparent;
+        }
+    }
+
+    &__search-wrapper {
+        display: flex;
+        align-items: center;
+        border: 2px solid black;
+        border-radius: 50px;
+        height: 36px;
+        padding: 0 10px;
+
+        .loc {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        input {
+            flex-grow: 1;
+            font-size: 18px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            line-height: 100%;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 22px 0;
+    button {
+        background: transparent;
+        border: #575757 solid 2px;
+        border-radius: 20px;
+        font-size: 18px;
+        padding: 4px 16px;
+        cursor: pointer;
+        transition: all .5s;
+    }
+
+    .selected {
+        background: #575757;
+        color: whitesmoke;
+    }
+}
+
+.main {
+    &__card {
+        display: flex;
+        gap: 20px;
+        border-radius: 50px;
+        color: white;
+        margin-bottom: 40px;
+        padding: 36px;
+        align-content: center;
+    }
+
+    &__visual {
+        width: 30%;
+    }
+
+    &__desc {
+        width: 70%;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    &__info {
+        display: flex;
+        flex-wrap: wrap;
+        p {
+            width: 50%;
+            text-align: center;
+        }
+    }
+
+    &__display {
+        overflow-x: scroll;
+    }
+}
+
+.visual {
+    &__icon {
+        img {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        text-align: center;
+    }
+}
+
+.desc {
+    &__temp {
+        font-size: 66pt;
+        margin: 0;
+    }
+    
+    &__calendar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__day {
+        font-size: 24pt;
+        font-weight: 400;
+    }
+}
+
+.display {
+    color: white;
+    margin-bottom: 40px;
+    p {
+        margin: 0;
+        text-align: center;
+    }
+
+    &__interval {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        border-radius: 20px;
+        padding: 12px 0;
+    }
+}
+
+#display {
+    padding-bottom: 10px;
+}
+
+.active-tab {
+    background-color: #575757 !important;
+    color: white;
+}
+
+.preloader {
+    font-size: 10px;
+    margin: 50px auto;
+    text-indent: -9999em;
+    width: 11em;
+    height: 11em;
+    border-radius: 50%;
+    background: #000000;
+    background: -moz-linear-gradient(left, #000000 10%, rgba(0,0,0, 0) 42%);
+    background: -webkit-linear-gradient(left, #000000 10%, rgba(0,0,0, 0) 42%);
+    background: -o-linear-gradient(left, #000000 10%, rgba(0,0,0, 0) 42%);
+    background: -ms-linear-gradient(left, #000000 10%, rgba(0,0,0, 0) 42%);
+    background: linear-gradient(to right, #000000 10%, rgba(0,0,0, 0) 42%);
+    position: relative;
+    -webkit-animation: load3 1.4s infinite linear;
+    animation: load3 1.4s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    &::before {
+        width: 50%;
+        height: 50%;
+        background: #000000;
+        border-radius: 100% 0 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+    }
+    &::after {
+        background: #000000;
+        width: 75%;
+        height: 75%;
+        border-radius: 50%;
+        content: '';
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    @-webkit-keyframes load3 {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes load3 {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      
+}
+
+//custom scroll
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #575757;
+    border-radius: 10px;
+}
+
+// #fdays {
+//     display: block !important;
+// }
+
+@media screen and (max-width: 1024px) {
+    ::-webkit-scrollbar {
+        width: initial;
+    }
+    
+    ::-webkit-scrollbar-track {
+        border: initial;
+        border-radius: initial;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: initial;
+        border-radius: initial;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .main {
+        &__desc {
+            gap: 0;
+        }
+    }
+
+    .desc {
+        &__temp {
+            line-height: 86px;
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .main {
+        &__card {
+            gap: 10px;
+        }
+
+        &__visual {
+            width: 40%;
+        }
+
+        &__desc {
+            width: 60%;
+        }
+    }
+
+    .desc {
+        &__temp {
+            font-size: 62pt;
+        }
+
+        &__day {
+            font-size: 22pt;
+        }
+    }
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.test {
+    text-align: center;
+    color: red;
+}
+
+.nav-tabs {
+    justify-content: center;
+    margin-bottom: 24px;
+}
